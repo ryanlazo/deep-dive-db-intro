@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Tue Feb 13 17:26:52 EST 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.1.0 - (1808820): instance a816c00e-0161-9147-1d9f-00000645f6a8 
+on database directory /Users/ryanlazo/Desktop/bootcamp/projects/deep-dive-db-intro/db/scheduling with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/Users/ryanlazo/.m2/repository/org/apache/derby/derby/10.14.1.0/derby-10.14.1.0.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_162-b12
+user.dir=/Users/ryanlazo/Desktop/bootcamp/projects/deep-dive-db-intro
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.13.2
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

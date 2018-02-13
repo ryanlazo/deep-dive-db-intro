@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="scheduling">
+  <database-model serializer="dbm" rdbms="DERBY" format-version="4.7">
+    <root id="1"/>
+    <schema id="2" parent="1" name="APP">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="NULLID"/>
+    <schema id="4" parent="1" name="SQLJ"/>
+    <schema id="5" parent="1" name="SYS"/>
+    <schema id="6" parent="1" name="SYSCAT"/>
+    <schema id="7" parent="1" name="SYSCS_DIAG"/>
+    <schema id="8" parent="1" name="SYSCS_UTIL"/>
+    <schema id="9" parent="1" name="SYSFUN"/>
+    <schema id="10" parent="1" name="SYSIBM"/>
+    <schema id="11" parent="1" name="SYSPROC"/>
+    <schema id="12" parent="1" name="SYSSTAT"/>
+    <table id="13" parent="2" name="EVENT"/>
+    <table id="14" parent="2" name="PERSON"/>
+    <table id="15" parent="2" name="PERSON_EVENT"/>
+    <column id="16" parent="13" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="17" parent="13" name="ORGANIZER_ID">
+      <Position>2</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+    </column>
+    <column id="18" parent="13" name="NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(100)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="13" name="DESCRIPTION">
+      <Position>4</Position>
+      <DataType>LONG VARCHAR(32700)|-1</DataType>
+    </column>
+    <column id="20" parent="13" name="START">
+      <Position>5</Position>
+      <DataType>TIMESTAMP(29,9)|93</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="13" name="FINISH">
+      <Position>6</Position>
+      <DataType>TIMESTAMP(29,9)|93</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="22" parent="13" name="SQL180213162936580">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="23" parent="13" name="SQL180213162936581">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ORGANIZER_ID</ColNames>
+      <RefSchemaName>APP</RefSchemaName>
+      <RefTableName>PERSON</RefTableName>
+      <RefKeyName>SQL180213160117780</RefKeyName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>set-null</OnDelete>
+    </foreign-key>
+    <column id="24" parent="14" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="25" parent="14" name="LAST_NAME">
+      <Position>2</Position>
+      <DataType>VARCHAR(100)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="14" name="FIRST_NAME">
+      <Position>3</Position>
+      <DataType>VARCHAR(100)|12</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="27" parent="14" name="SQL180213160117781">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>LAST_NAME
+FIRST_NAME</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="28" parent="14" name="SQL180213160117780">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="15" name="ID">
+      <Position>1</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DefaultExpression>GENERATED_BY_DEFAULT</DefaultExpression>
+    </column>
+    <column id="30" parent="15" name="PERSON_ID">
+      <Position>2</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="31" parent="15" name="EVENT_ID">
+      <Position>3</Position>
+      <DataType>BIGINT(19)|-5</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="32" parent="15" name="CONFIRMED">
+      <Position>4</Position>
+      <DataType>BOOLEAN(1)|16</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>FALSE</DefaultExpression>
+    </column>
+    <index id="33" parent="15" name="SQL180213173853060">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PERSON_ID
+EVENT_ID</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="15" name="SQL180213173853050">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="15" name="SQL180213173853051">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>PERSON_ID</ColNames>
+      <RefSchemaName>APP</RefSchemaName>
+      <RefTableName>PERSON</RefTableName>
+      <RefKeyName>SQL180213160117780</RefKeyName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="36" parent="15" name="SQL180213173853052">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>EVENT_ID</ColNames>
+      <RefSchemaName>APP</RefSchemaName>
+      <RefTableName>EVENT</RefTableName>
+      <RefKeyName>SQL180213162936580</RefKeyName>
+      <RefColNames>ID</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
